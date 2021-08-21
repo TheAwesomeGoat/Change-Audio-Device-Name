@@ -25,7 +25,7 @@ namespace Change_Audio_Device_Name
         }
 
         static string RenderPath = @"SOFTWARE\Microsoft\Windows\CurrentVersion\MMDevices\Audio\Render"; 
-        static RegistryKey MMDEVAPIKey = Registry.LocalMachine.CreateSubKey(@"SYSTEM\ControlSet001\Enum\SWD\MMDEVAPI", false);
+        static RegistryKey MMDEVAPIKey = Registry.LocalMachine.OpenSubKey(@"SYSTEM\ControlSet001\Enum\SWD\MMDEVAPI", false);
         static void Main(string[] args)
         {
             Dictionary<string, MMDEVAPI> AudioDevices = new Dictionary<string, MMDEVAPI>();
